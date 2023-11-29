@@ -1,0 +1,186 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    border: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.header{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #1c1f23;
+}
+.logo{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo .sch_logo{
+    height: 50px;
+    width: 50px;
+}
+.nav{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav .nav-links{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav .nav-links ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav .nav-links ul a{
+    text-decoration: none;
+}
+.nav .nav-links ul a:hover{
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: white;
+    cursor: pointer;
+}
+.nav .logout{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav .logout .profile{
+    width: 20%;
+    height: 20%;
+}
+.nav .logout .down-arrow{
+    width: 10%;
+    height: 10%;
+}
+.cont{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.cont .img1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img1 h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.img1 .sch_motto {
+    font-weight: 500;
+    color: white;
+    margin-bottom: 2rem;
+}
+.img1 .cta {
+    padding: 20px;
+    font-size: 1.4rem;
+    color: white;
+    border-radius: 0.8rem;
+    background-color: rgb(38, 84, 224);
+    transition: all 0.5s;
+}
+.img1 .cta:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transform: scale(1.2);
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-120px);
+    }
+    50% {
+        transform: translatex(120px);
+    }
+    100% {
+        transform: translatex(-120px);
+    }
+}
+.animate--fast {
+    animation-duration: 3s;
+}
+.animate--slow {
+    animation-duration: 5s;
+}
+.animate--forever {
+    animation-iteration-count: infinite;
+}
+.animate--reals {
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+.slideInLeft {
+    animation-name: slideInLeft;
+    animation-timing-function: ease-in-out;
+}
+.img1 .avator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 4rem;
+    left: 0;
+    z-index: -2;
+}
+.form{
+    height: 90%;
+    width: 100%;
+}
+.input_form{
+    height: 75%;
+    width: 50%;
+    background-color: #7b93b8;
+    border: 2px solid #0a53be;
+    border-radius: 1.5rem;
+}
+.form-control{
+    width: 32rem;
+    text-align: start;
+}
+.submit{
+    width: 6rem;
+    padding: 5px;
+    margin-top: 1rem;
+    background-color: #0a53be;
+    border-radius: 15px;
+}
