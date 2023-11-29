@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from .models import Student, Course, StudentCourses, Attendance
 from django.utils import timezone
+from django.db.models import Count
 
 
 def register(request):
@@ -107,6 +108,17 @@ def mark_attendance(request):
 
 
 def view_attendance(request):
+    if request.method == 'POST':
+        course_id = request.POST.get('course')
+        student_id = request.session.get('user_id')
+
+        attendance_data = (
+            Attendance.objects
+            .filter(course_id=course_id, student_id=student_id)
+            .values('student_id', 'course_id', 'student__firstname', 'course__coursename', 'student__username')
+            .annotate(total_attendance=Count('course__coursename'))
+            .distinct()
+        )
     user_id = request.session.get('user_id')
     student_course_data = Attendance.objects.filter(student_id=user_id).select_related('student', 'course').all()
     return render(request, 'view_attend.html', {'data': student_course_data})

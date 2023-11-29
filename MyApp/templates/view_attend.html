@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
   </head>
-
 <body>
   <header class="header-area header-sticky">
       <div class="container">
@@ -67,27 +66,19 @@
             <div class="tabs">
               <div class="row">
                 <div class="col-lg-12">
-                  <div class="menu">
-                    <div class="active gradient-border"><span>Web Design</span></div>
-                    <div class="gradient-border"><span>Graphics</span></div>
-                    <div class="gradient-border"><span>Web Coding</span></div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
                   <ul class="nacc">
                     <li class="active">
                       <div>
-                        <div class="main-list">
-                          <span class="title">Student Name</span>
-                          <span class="title">Course Name</span>
-                          <span class="title">Classes Attendes</span>
-                        </div>
-                        <div class="list-item">
-                          <span class="item item-title">Website Redesign</span>
-                          <span class="item">$1,500 to $2,200</span>
-                          <span class="item">2022 Dec 12</span>
-                          <span class="item">Web Biz</span>
-                        </div>
+                        {% for d in data %}
+                            <div class="list-item">
+                              <span class="item item-title">{{ d.course.coursename }}</span>
+                                  <form method="post">
+                                      {% csrf_token %}
+                                      <input type="hidden" name="course" value="{{ d.course.id }}">
+                                      <input type="submit" class="item" value="Show">
+                                  </form>
+                            </div>
+                        {% endfor %}
                       </div>
                     </li>
                   </ul>
